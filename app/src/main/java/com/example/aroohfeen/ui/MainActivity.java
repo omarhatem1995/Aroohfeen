@@ -1,8 +1,10 @@
-package com.example.aroohfeen;
+package com.example.aroohfeen.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.aroohfeen.R;
 
 public class MainActivity extends AppCompatActivity {
 

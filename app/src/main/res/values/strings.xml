@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Aroohfeen</string>
+    <string name="user_s_registration">Registration</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="date_of_birth">Select date of birth</string>
+    <string name="create_account">Create Account</string>
+    <string name="or_register_with">Or Register With</string>
+    <string name="login_with_twitter">Login with Twitter</string>
+    <string name="login_with_facebook">Login with Facebook</string>
+    <string name="login_with_gmail">Login with Gmail</string>
 </resources>
