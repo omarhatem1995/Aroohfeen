@@ -10,10 +10,14 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+
+import java.util.Arrays;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -21,11 +25,12 @@ public class LoginActivity extends AppCompatActivity {
 
     private CallbackManager callbackManager;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        FacebookSdk.sdkInitialize(getApplicationContext());
+
         initViews();
 
         initPresenter();
@@ -40,6 +45,9 @@ public class LoginActivity extends AppCompatActivity {
         loginPresenter = new LoginPresenter(this,this);
 
         loginPresenter.initFacebookLogin();
+    }
+    public void initFacebookLogin() {
+
     }
 
 
