@@ -1,4 +1,4 @@
-package com.example.aroohfeen;
+package com.application.aroohfeen;
 
 import org.junit.Test;
 

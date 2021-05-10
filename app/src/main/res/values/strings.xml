@@ -12,4 +12,8 @@
     <string name="login_with_twitter">Login with Twitter</string>
     <string name="login_with_facebook">Login with Facebook</string>
     <string name="login_with_gmail">Login with Gmail</string>
+
+    <string name="facebook_app_id">789426901999669</string>
+    <string name="fb_login_protocol_scheme">fb789426901999669</string>
+
 </resources>

@@ -1,14 +1,13 @@
-package com.example.aroohfeen.ui;
+package com.application.aroohfeen.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
 
-import com.example.aroohfeen.R;
+import com.application.aroohfeen.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -24,7 +23,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     }
     private void initViews(){
         backgroundImage = findViewById(R.id.image_splash);
-        handleGif(SignupActivity.class,3000,null);
+        handleGif(LoginActivity.class,3000,null);
     }
     public void handleGif(Class activity, long delay, String extras){
         Handler handler = new Handler();
