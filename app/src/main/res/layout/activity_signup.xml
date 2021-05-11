@@ -15,17 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-    <TextView
-        android:id="@+id/users_registeration_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/user_s_registration"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
     <LinearLayout
         android:id="@+id/layout_user_name"
@@ -34,7 +23,7 @@
         android:orientation="horizontal"
         android:layout_marginTop="16dp"
         android:weightSum="1"
-        app:layout_constraintTop_toBottomOf="@id/users_registeration_label"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -172,6 +161,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/or_register_with"
+            android:visibility="gone"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:layout_marginTop="16dp"
@@ -185,6 +175,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:maxLines="1"
+            android:visibility="gone"
             android:elevation="4dp"
             android:layout_marginTop="16dp"
             android:text="@string/login_with_gmail"
@@ -203,6 +194,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:maxLines="1"
+            android:visibility="gone"
             android:elevation="4dp"
             android:layout_marginTop="16dp"
             android:text="@string/login_with_facebook"
@@ -219,6 +211,7 @@
             android:id="@+id/button_twitter_register"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:visibility="gone"
             android:maxLines="1"
             android:elevation="4dp"
             android:layout_marginTop="16dp"

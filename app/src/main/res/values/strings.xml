@@ -15,5 +15,7 @@
 
     <string name="facebook_app_id">789426901999669</string>
     <string name="fb_login_protocol_scheme">fb789426901999669</string>
+    <string name="login">Login</string>
+    <string name="or_login_with">Or login with</string>
 
 </resources>

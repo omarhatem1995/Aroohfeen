@@ -132,7 +132,7 @@ public class LoginPresenter {
             handleSignInResult(task);
         }
 
-//        activity.startActivity(new Intent(activity, MainActivity.class));
+        activity.startActivity(new Intent(activity, MainActivity.class));
         Log.d("onActivityResult", " activity Result");
     }
 
