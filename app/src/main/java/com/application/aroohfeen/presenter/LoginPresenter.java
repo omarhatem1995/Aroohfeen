@@ -18,11 +18,20 @@ import com.facebook.GraphResponse;
 import com.facebook.Profile;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Arrays;
+
+import androidx.annotation.NonNull;
 
 public class LoginPresenter {
 
@@ -111,12 +120,67 @@ public class LoginPresenter {
 
 
     }
-
+    int RC_SIGN_IN = 1223;
     public void activityResult(int requestCode, int resultCode, Intent data) {
         //right your code here .
         callbackManager.onActivityResult(requestCode, resultCode, data);
 
+        if (requestCode == RC_SIGN_IN) {
+            // The Task returned from this call is always completed, no need to attach
+            // a listener.
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            handleSignInResult(task);
+        }
+
 //        activity.startActivity(new Intent(activity, MainActivity.class));
         Log.d("onActivityResult", " activity Result");
+    }
+
+GoogleSignInClient mGoogleSignInClient;
+
+    public void initGoogleLogin() {
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(context, gso);
+
+// Check for existing Google Sign In account, if the user is already signed in
+// the GoogleSignInAccount will be non-null.
+        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(context);
+//        updateUI(account);
+        // Build a GoogleSignInClient with the options specified by gso.
+//        mGoogleSignInClient = GoogleSignIn.getClient(context, gso);
+
+
+    }
+
+    private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
+        try {
+            GoogleSignInAccount account = completedTask.getResult(ApiException.class);
+            Log.w("TAGGoogle", "signInResult:Success code=" + account.getDisplayName() +
+                    "e.getStatusCode()" + account.getEmail());
+            account.getDisplayName();
+            // Signed in successfully, show authenticated UI.
+//            updateUI(account);
+        } catch (ApiException e) {
+            // The ApiException status code indicates the detailed failure reason.
+            // Please refer to the GoogleSignInStatusCodes class reference for more information.
+            Log.w("TAGGoogle", "signInResult:failed code=" + e.getStatusCode());
+//            updateUI(null);
+        }
+    }
+    public void googleSignIn() {
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        activity.startActivityForResult(signInIntent, RC_SIGN_IN);
+    }
+
+    public void googleSignOut() {
+        mGoogleSignInClient.signOut()
+                .addOnCompleteListener(activity, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        // ...
+                    }
+                });
     }
 }

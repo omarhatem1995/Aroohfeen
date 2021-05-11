@@ -5,21 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.application.aroohfeen.R;
 import com.application.aroohfeen.presenter.LoginPresenter;
 import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
-import com.facebook.FacebookSdk;
-import com.facebook.login.LoginManager;
-import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.common.SignInButton;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
-import java.util.Arrays;
-
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     private LoginPresenter loginPresenter;
 
@@ -38,17 +30,21 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void initViews(){
-
+// Set the dimensions of the sign-in button.
+        SignInButton signInButton = findViewById(R.id.button_gmail_login);
+        signInButton.setSize(SignInButton.SIZE_STANDARD);
+        signInButton.setOnClickListener(this);
     }
 
     private void initPresenter(){
         loginPresenter = new LoginPresenter(this,this);
 
+        loginPresenter.initGoogleLogin();
+
         loginPresenter.initFacebookLogin();
     }
-    public void initFacebookLogin() {
 
-    }
+
 
 
     @Override
@@ -57,4 +53,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.button_gmail_login:
+            loginPresenter.googleSignIn();
+        }
+    }
 }
