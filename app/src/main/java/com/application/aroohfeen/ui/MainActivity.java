@@ -45,63 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView.setBackground(null);
         bottomNavigationView.getMenu().getItem(2).setEnabled(false);
-        getDefaultSlider();
+        mainPresenter.getDefaultSlider();
 
-    }
-    public void getDefaultSlider() {
-        SliderView sliderView = findViewById(R.id.imageSlider);
-        SliderAdapter sliderAdapter = new SliderAdapter(this);
-
-        sliderView.setSliderAdapter(sliderAdapter);
-        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM); //set indicator animation by using SliderLayout.IndicatorAnimations. :WORM or THIN_WORM or COLOR or DROP or FILL or NONE or SCALE or SCALE_DOWN or SLIDE and SWAP!!
-        sliderView.setSliderTransformAnimation(SliderAnimations.SIMPLETRANSFORMATION);
-        sliderView.setAutoCycleDirection(SliderView.AUTO_CYCLE_DIRECTION_BACK_AND_FORTH);
-        sliderView.setScrollTimeInSec(3); //set scroll delay in seconds :
-        sliderView.startAutoCycle();
-
-        ArrayList<SliderItem> list = new ArrayList<>();
-
-        list.add(new SliderItem(
-                R.drawable.image2,
-                "getString(R.string.slider_title_1)",
-                "getString(R.string.slider_message_1)"));
-        list.add(new SliderItem(
-                R.drawable.image1,
-                "getString(R.string.slider_message_1)",
-                "getString(R.string.slider_message_1)"));
-        list.add(new SliderItem(
-                R.drawable.image2,
-                "getString(R.string.slider_message_1)",
-                "getString(R.string.slider_message_1)"));
-        list.add(new SliderItem(
-                R.drawable.image1,
-                "getString(R.string.slider_message_1)",
-                "getString(R.string.slider_message_1)"));
-        list.add(new SliderItem(
-                R.drawable.image2,
-                "getString(R.string.slider_message_1)",
-                "getString(R.string.slider_message_1)"));
-        list.add(new SliderItem(
-                R.drawable.image1,
-                "getString(R.string.slider_message_1)",
-                "getString(R.string.slider_message_1)"));
-        list.add(new SliderItem(
-                R.drawable.image2,
-                "getString(R.string.slider_message_1)",
-                "getString(R.string.slider_message_1)"));
-        list.add(new SliderItem(
-                R.drawable.image1,
-                "getString(R.string.slider_message_1)",
-                "getString(R.string.slider_message_1)"));
-        list.add(new SliderItem(
-                R.drawable.image2,
-                "getString(R.string.slider_message_1)",
-                "getString(R.string.slider_message_1)"));
-        list.add(new SliderItem(
-                R.drawable.image1,
-                "getString(R.string.slider_message_1)",
-                "getString(R.string.slider_message_1)"));
-
-        sliderAdapter.renewItems(list);
     }
 }
