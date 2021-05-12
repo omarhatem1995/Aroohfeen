@@ -6,21 +6,21 @@
         android:title="Home" />
 
     <item
-        android:id="@+id/Search"
-        android:icon="@drawable/ic_cart"
-        android:title="Search" />
+        android:id="@+id/offers"
+        android:icon="@drawable/ic_offers"
+        android:title="Offers" />
 
     <item
         android:id="@+id/placeholder"
         android:title="" />
 
     <item
-        android:id="@+id/Profile"
-        android:icon="@drawable/ic_cart"
-        android:title="Profile" />
+        android:id="@+id/sections"
+        android:icon="@drawable/ic_sections"
+        android:title="Sections" />
 
     <item
-        android:id="@+id/Settings"
-        android:icon="@drawable/ic_cart"
-        android:title="Settings" />
+        android:id="@+id/jobs"
+        android:icon="@drawable/ic_jobs"
+        android:title="Jobs" />
 </menu>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:shownIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_trips"
+        android:title="Register as an Owner"
+        android:visible="true"/>
+
+    <item
+        android:id="@+id/nav_wallet"
+        android:title="Privacy Policy" />
+    <item
+        android:id="@+id/nav_settings"
+        android:title="About us"
+        android:visible="true"/>
+    <item
+        android:id="@+id/nav_aboutus"
+        android:title="Contact us"
+        android:visible="true"/>
+    <item
+        android:id="@+id/nav_logout"
+        android:title="logout"
+        android:visible="true"/>
+
+</menu>

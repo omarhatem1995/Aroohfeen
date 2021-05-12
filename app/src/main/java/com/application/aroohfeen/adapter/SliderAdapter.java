@@ -1,4 +1,4 @@
-package com.application.aroohfeen.ui;
+package com.application.aroohfeen.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
