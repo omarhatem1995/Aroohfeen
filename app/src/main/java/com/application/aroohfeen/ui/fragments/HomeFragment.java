@@ -1,4 +1,4 @@
-package com.application.aroohfeen.ui;
+package com.application.aroohfeen.ui.fragments;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,6 +15,7 @@ import com.application.aroohfeen.adapter.SliderAdapter;
 import com.application.aroohfeen.model.MainProductsItem;
 import com.application.aroohfeen.model.SliderItem;
 import com.application.aroohfeen.presenter.MainPresenter;
+import com.application.aroohfeen.ui.MainActivity;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
@@ -30,15 +31,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class HomeFragment extends Fragment {
-    private MainActivity activity;
-    private Context context;
-    MainPresenter mainPresenter;
-    View view;
+
+    private View view;
+
+    private RecyclerView recyclerView;
+    private MainProductsAdapter mainProductsAdapter;
+    private List<MainProductsItem> mainProductsList;
+    private MainProductsItem mainProductsItem ;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_home, container, false);
-        mainPresenter = new MainPresenter(getActivity(),getContext());
 
         getDefaultSlider();
 
@@ -48,8 +52,6 @@ public class HomeFragment extends Fragment {
 
     }
     public void getDefaultSlider() {
-
-        Log.d("getDefaultSlider", "is called");
         SliderView sliderView = view.findViewById(R.id.imageSlider_home);
         SliderAdapter sliderAdapter = new SliderAdapter(getContext());
 
@@ -102,14 +104,10 @@ public class HomeFragment extends Fragment {
                 R.drawable.image1,
                 "getString(R.string.slider_message_1)",
                 "getString(R.string.slider_message_1)"));
-        Toast.makeText(getContext(), "Tiast", Toast.LENGTH_SHORT).show();
+
         sliderAdapter.renewItems(list);
     }
 
-    private RecyclerView recyclerView;
-    private MainProductsAdapter mainProductsAdapter;
-    private List<MainProductsItem> mainProductsList;
-    private MainProductsItem mainProductsItem ;
 
     public void mainRecyclerView() {
         recyclerView = view.findViewById(R.id.recyclerview_main_products_home);

@@ -11,8 +11,9 @@ import android.widget.ImageView;
 
 import com.application.aroohfeen.R;
 import com.application.aroohfeen.presenter.MainPresenter;
+import com.application.aroohfeen.ui.fragments.HomeFragment;
+import com.application.aroohfeen.ui.fragments.SectionsFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.smarteist.autoimageslider.SliderView;
 
 public class MainActivity extends AppCompatActivity {
 
